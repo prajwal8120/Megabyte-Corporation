@@ -5,9 +5,10 @@ pipeline {
   }
   
   stages{
-    stage("code checkout")
+    stage("code checkout"){
     steps{
       git 'https://github.com/prajwal8120/Megabyte-Corporation.git'
-    }
-  }
+     }
+   }
+ }
 }
