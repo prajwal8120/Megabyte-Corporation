@@ -10,7 +10,6 @@ pipeline {
       git 'https://github.com/prajwal8120/Megabyte-Corporation.git'
      }
    }
- }
   
   stage("build package"){
     steps{
