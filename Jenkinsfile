@@ -17,4 +17,16 @@ pipeline {
     }
   }
 }
+  
+  post{
+    success{
+      slackSend channel: 'capstone-project', color: "good", message: 'Passed'
+    }
+    failed{
+      slackSend channel: 'capstone-project', color: "danger", message: 'Failed'
+    }
+    aborted{
+      slackSend channel: 'capstone-project', color: "warning", message: 'Aborted'
+    }
+  }
 }
