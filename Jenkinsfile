@@ -22,7 +22,7 @@ pipeline {
     success{
       slackSend channel: 'capstone-project', color: "good", message: 'Passed'
     }
-    failed{
+    failure{
       slackSend channel: 'capstone-project', color: "danger", message: 'Failed'
     }
     aborted{
