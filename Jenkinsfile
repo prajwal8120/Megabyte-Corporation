@@ -11,9 +11,10 @@ pipeline {
      }
    }
   
-//  stage("build package"){
-//    steps{
-//      sh 'mvn clean package'
-//    }
+  stage("build package"){
+    steps{
+      sh 'mvn clean package'
+      }
+    }
   }
 }
