@@ -1,0 +1,17 @@
+com/staragile/demo/utilities/LoggerStackTraceUtil.class
+com/staragile/demo/tutorial/addressbook/AddressbookUI$MyUIServlet.class
+com/staragile/demo/helper/GenericResourceBundle.class
+com/staragile/demo/tutorial/addressbook/AddressbookUI.class
+com/staragile/demo/utilities/PropertyHelper.class
+com/staragile/demo/utilities/PrepareTargetMethod.class
+com/staragile/demo/utilities/PropertyLoader.class
+com/staragile/demo/utilities/HexAsciiConvertor.class
+com/staragile/demo/utilities/CaseInsensitiveComparator.class
+com/staragile/demo/tutorial/addressbook/backend/ContactService.class
+com/staragile/demo/tutorial/addressbook/backend/ContactService$1.class
+com/staragile/demo/utilities/GenericComparator$1.class
+com/staragile/demo/tutorial/addressbook/backend/Contact.class
+com/staragile/demo/utilities/GenericComparator.class
+com/staragile/demo/utilities/GenericComparator$CompareMode.class
+com/staragile/demo/utilities/StringUtilities.class
+com/staragile/demo/tutorial/addressbook/ContactForm.class
