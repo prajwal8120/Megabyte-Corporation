@@ -17,11 +17,12 @@ pipeline {
       }
     }
 
-  stage('Push') {
+  stage('Build & Run Container') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'REGISTRY_PASSWORD', usernameVariable: 'insta7120')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'insta7120', passwordVariable: 'REGISTRY_PASSWORD')]) {
                     sh "docker login -u $insta7120 -p $REGISTRY_PASSWORD"
                     sh 'docker build -t my-address .'
+                    sh 'docker run -d --name my-instance -p 8081:8080 my-address'
                     //sh 'docker tag my-address insta7120/my-address:latest'
                     //sh 'docker push insta7120/my-address:latest'
                 }
