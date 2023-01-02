@@ -49,5 +49,12 @@ pipeline {
         echo "Pushed Image Successfully"
     }
   }
-}
+
+  stage('Execute palybook in test-env') {
+    steps {
+      ansiblePlaybook credentialsId: 'test-env', inventory: 'inventory.inv', playbook: 'Deployment-test.yml'
+    }
+  }
+    }
+
 }

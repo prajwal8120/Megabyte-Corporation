@@ -5,14 +5,14 @@
   - name: install python3
     command: sudo apt install python3 -y
 
-  -name: install pip
-   command: sudo apt install pip -y
+  - name: install pip
+    command: sudo apt install pip -y
 
-  -name: install docker-py
-   command: sudo pip install docker-py
+  - name: install docker-py
+    command: sudo pip install docker-py
 
-  -name: install docker 
-   command: sudo apt install docker.io -y
+  - name: install docker 
+    command: sudo apt install docker.io -y
 
-  -name: install aws-cli
-   command: sudo apt install awscli -y
+  - name: install aws-cli
+    command: sudo apt install awscli -y
