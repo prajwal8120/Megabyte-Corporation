@@ -33,6 +33,7 @@ pipeline {
   stage('Build Image') {
             steps {
                 sh 'docker build -t my-address .'
+                sh 'docker rmi $(sudo docker images -f "dangling=true" -q)'
                 echo "Image created Successfully"
             }   
   }      
