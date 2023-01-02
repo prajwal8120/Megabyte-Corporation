@@ -1,2 +1,2 @@
 [test_env]
-172.31.2.158 ansible_user=ubuntu
+172.31.2.61 ansible_user=ubuntu
