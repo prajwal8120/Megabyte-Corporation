@@ -19,10 +19,11 @@ pipeline {
 
   stage('Build & Run Container') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'insta7120', passwordVariable: 'REGISTRY_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'REGISTRY_PASSWD', usernameVariable: 'REGISTRY_NAME')]) {
+                //withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'insta7120', passwordVariable: 'REGISTRY_PASSWORD')]) {
                 //withCredentials([usernameColonPassword(credentialsId: 'docker-login', variable: 're')]) {
                 //withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'insta7120', passwordVariable: 'dock-hub')]) {
-                    sh "docker login -u $insta7120 -p $dock-hub"
+                    sh "docker login -u $REGISTRY_NAME -p $REGISTRY_PASSWD"
                     //sh 'docker build -t my-address .'
                     //sh 'docker run -d --name my-instance -p 8081:8080 my-address'
                     //sh 'docker tag my-address insta7120/my-address:v1.0'
