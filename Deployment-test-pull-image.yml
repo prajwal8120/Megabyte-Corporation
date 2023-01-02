@@ -5,3 +5,6 @@
   tasks:
   - name: pull docker image
     command: docker pull insta7120/my-address:v1.0
+
+  - name: run container
+    command: docker -d --name test-server -p 8080:8080 insta7120/my-address:v1.0
