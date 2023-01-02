@@ -1,0 +1,22 @@
+---
+- hosts: test_env
+  user: ansible
+  become: true
+  tasks:
+  - name: update package
+    command: apt update
+
+  - name: install python3
+    command: apt install python3 -y
+
+  - name: install pip
+    command: apt install pip -y
+
+  - name: install docker-py
+    command: pip install docker-py
+
+  - name: install docker 
+    command: apt install docker.io -y
+
+  - name: install unzip
+    command: apt install unzip
