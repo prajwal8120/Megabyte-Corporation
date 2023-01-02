@@ -4,13 +4,13 @@
   become: true
   tasks:
   - name: install python3
-    command: sudo apt install python3 -y
+    command: apt install python3 -y
 
   - name: install pip
-    command: sudo apt install pip -y
+    command: apt install pip -y
 
   - name: install docker-py
-    command: sudo pip install docker-py
+    command: pip install docker-py
 
   - name: install docker 
-    command: sudo apt install docker.io -y
+    command: apt install docker.io -y
