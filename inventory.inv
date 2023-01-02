@@ -1,2 +1,2 @@
 [test-env]
-18.60.51.207 ansible_ssh_user=ubuntu
+ubuntu@18.60.51.207 
