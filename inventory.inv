@@ -1,2 +1,2 @@
 [test_env]
-172.31.38.66 ansible_pass=123 ansible_user=ansible 
+172.31.38.66 ansible_ssh_pass=123 ansible_ssh_user=ansible 
