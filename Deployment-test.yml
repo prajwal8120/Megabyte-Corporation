@@ -5,7 +5,7 @@
   tasks:
   - name: update package
     command: apt update
-    
+
   - name: install python3
     command: apt install python3 -y
 
@@ -17,3 +17,6 @@
 
   - name: install docker 
     command: apt install docker.io -y
+
+  - name: install unzip
+    command: apt install unzip
