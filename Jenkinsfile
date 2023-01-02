@@ -52,7 +52,7 @@ pipeline {
 
   stage('Execute palybook in test-env') {
     steps {
-      ansiblePlaybook credentialsId: 'ssh-ansible', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.inv', playbook: 'Deployment-test.yml'
+      ansiblePlaybook credentialsId: 'test-env', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.inv', playbook: 'Deployment-test.yml'
     }
   }
     }
