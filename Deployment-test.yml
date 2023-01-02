@@ -3,6 +3,9 @@
   user: ubuntu
   become: true
   tasks:
+  - name: update package
+    command: apt update
+    
   - name: install python3
     command: apt install python3 -y
 
