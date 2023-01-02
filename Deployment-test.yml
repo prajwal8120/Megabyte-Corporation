@@ -1,6 +1,6 @@
 ---
 - hosts: test_env
-  user: ubuntu
+  user: ansible
   become: true
   tasks:
   - name: update package
