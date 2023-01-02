@@ -2,5 +2,6 @@
 - hosts: test_env
   user: ansible
   become: true
+  tasks:
   - name: pull docker image
     command: docker pull insta7120/my-address:v1.0
