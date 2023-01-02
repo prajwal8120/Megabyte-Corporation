@@ -1,5 +1,5 @@
 ---
-- hosts: test-env
+- hosts: test_env
   become: true
   tasks:
   - name: install python3
