@@ -13,6 +13,3 @@
 
   - name: install docker 
     command: sudo apt install docker.io -y
-
-  - name: install aws-cli
-    command: sudo apt install awscli -y
