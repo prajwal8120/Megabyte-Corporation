@@ -41,6 +41,7 @@ pipeline {
   stage('Tag Image') {
     steps {
         sh 'docker tag my-address insta7120/my-address:v1.0'
+        sh 'docker rmi $(docker images -f "dangling=true" -q)'
         echo "Tagged Image Successfully"
     }
   }
