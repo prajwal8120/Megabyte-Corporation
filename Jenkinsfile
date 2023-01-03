@@ -65,6 +65,7 @@ pipeline {
 stage('Execute playbook in prod-env'){
   steps{
     ansiblePlaybook credentialsId: 'prod-env', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventoryforprod.inv', playbook: 'docker-pull-image-to-prod.yml'
+    echo 'Deploying Application into Prod-Env'
   }
 }
   }
