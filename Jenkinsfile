@@ -12,52 +12,60 @@ pipeline {
      }
    }
   
-  stage("build package"){
-    steps{
-      sh 'mvn clean package'
-      echo "Build Success"
-      }
-    }
+  //stage("build package"){
+    //steps{
+      //sh 'mvn clean package'
+      //echo "Build Success"
+     // }
+   // }
 
-  stage('Login') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'password_reg', usernameVariable: 'name')]) {
+  //stage('Login') {
+            //steps {
+                //withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'password_reg', usernameVariable: 'name')]) {
                 //withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'insta7120', passwordVariable: 'REGISTRY_PASSWORD')]) {
                 //withCredentials([usernameColonPassword(credentialsId: 'docker-login', variable: 're')]) {
                 //withCredentials([usernamePassword(credentialsId: 'docker-login', usernameVariable: 'insta7120', passwordVariable: 'dock-hub')]) {
-                    sh 'docker login -u $name -p $password_reg'
+                    //sh 'docker login -u $name -p $password_reg'
                     //sh 'docker login --username $name --password-stdin $password_reg'
-                }
-            }
-  }
-  stage('Build Image') {
-            steps {
-                sh 'docker build -t my-address .'
-                sh 'docker rmi $(docker images -f "dangling=true" -q)'
-                echo "Image created Successfully"
-            }   
-  }      
+                //}
+            //}
+  //}
+  //stage('Build Image') {
+            //steps {
+                //sh 'docker build -t my-address .'
+                //sh 'docker rmi $(docker images -f "dangling=true" -q)'
+                //echo "Image created Successfully"
+           // }   
+  //}      
                     //sh 'docker run -d --name my-instance -p 8081:8080 my-address'
-  stage('Tag Image') {
-    steps {
-        sh 'docker tag my-address insta7120/my-address:v1.0'
-        sh 'docker rmi $(docker images -f "dangling=true" -q)'
-        echo "Tagged Image Successfully"
-    }
-  }
-  stage('Push Image to DockerHub') {
-    steps {
-        sh 'docker push insta7120/my-address:v1.0'
-        echo "Pushed Image Successfully"
-    }
-  }
+  //stage('Tag Image') {
+    //steps {
+        //sh 'docker tag my-address insta7120/my-address:v1.0'
+        //sh 'docker rmi $(docker images -f "dangling=true" -q)'
+        //echo "Tagged Image Successfully"
+    //}
+  //}
+  //stage('Push Image to DockerHub') {
+    //steps {
+        //sh 'docker push insta7120/my-address:v1.0'
+        //echo "Pushed Image Successfully"
+    //}
+  //}
 
-  stage('Execute palybook in test-env') {
-    steps {
-      ansiblePlaybook credentialsId: 'test-env', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.inv', playbook: 'Deployment-test-pull-image.yml'
-      echo "Application Deployed on Test-Server"
-    }
-  }
-    }
+  //stage('Execute palybook in test-env') {
+    //steps {
+      //ansiblePlaybook credentialsId: 'test-env', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.inv', playbook: 'Deployment-test-pull-image.yml'
+      //echo "Application Deployed on Test-Server"
+    //}
+  //}
+    //}
 
+//}
+
+stage('Execute playbook in prod-env'){
+  steps{
+    ansiblePlaybook credentialsId: 'prod-env', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventoryforprod.inv', playbook: 'docker-pull-image-to-prod.yml'
+  }
+}
+  }
 }

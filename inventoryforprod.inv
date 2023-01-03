@@ -1,0 +1,2 @@
+[prod_env]
+172.31.3.56 ansible_ssh_user=ubuntu

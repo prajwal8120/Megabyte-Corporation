@@ -1,0 +1,22 @@
+---
+- hosts: prod_env
+  user: ubuntu
+  become: true
+  tasks:
+  - name: update package
+    command: apt update
+
+  - name: install python3
+    command: apt install python3 -y
+
+  - name: install pip
+    command: apt install pip -y
+
+  - name: install docker-py
+    command: pip install docker-py
+
+  - name: install docker 
+    command: apt install docker.io -y
+    
+  - name: docker pull to prod-env
+    command: docker pull insta7120/my-address:v1.1
