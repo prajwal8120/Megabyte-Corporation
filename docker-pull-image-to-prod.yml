@@ -20,3 +20,6 @@
     
   - name: docker pull to prod-env
     command: docker pull insta7120/my-address:v1.1
+
+  - name: docker run container
+    command: docker run -d --name prod-server -p 8080:8080 insta7120/my-address:v1.1
